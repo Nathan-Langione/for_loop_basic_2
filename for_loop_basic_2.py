@@ -64,3 +64,63 @@ def minimum(lst):
     return min
 print(minimum([37,2,1,-9]))
 print(minimum([]))
+
+
+# 7. Maximum
+def maximum(lst):
+    print("Running Maximum")
+    if len(lst) == 0:
+        return False
+    max = lst[0]
+    for i in lst:
+        if i > max:
+            max = i
+    return max
+print(maximum([37,2,1,-9]))
+print(maximum([]))
+
+
+# 8. Ultimate Analysis
+def ultimate_analysis(lst):
+    print("Running Ultimate Analysis")
+    dict = {
+        "sum_total":0,
+        "average":0,
+        "minimum":0,
+        "maximum":0,
+        "length": 0
+    }
+    total = 0
+    avg = 0
+    min = 0
+    max = 0
+    
+    for i in lst:
+        total += i
+        if i < min:
+            min = i
+        if i > max:
+            max = i
+    dict["sum_total"] = total
+    dict["average"] = float(total)/float(len(lst))
+    dict["minimum"] = min
+    dict["maximum"] = max
+    dict["length"] = len(lst)
+    
+    return dict
+print(ultimate_analysis([37,2,1,-9]) )
+
+
+# 9. Reverse List
+def reverse_list(lst):
+    print("Running Reverse List")
+    start = 0
+    count = 1
+    length = len(lst)
+    while count <= length/2:
+        lst[start], lst[len(lst) -count] = lst[len(lst) -count], lst[start]
+        count+=1
+        start +=1
+    return lst
+print(reverse_list([37,2,1,-9])) 
+        
